@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Theme token mapping */
+@theme {
+  --radius-radius-lg: var(--radius-lg);
+  --radius-radius-sm: var(--radius-sm);
+
+  --color-surface: var(--color-surface);
+  --color-on-surface: var(--color-on-surface);
+
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-error: var(--color-error);
+
+  --color-strong: var(--text-strong);
+  --color-basec: var(--text-basec);
+  --color-muted: var(--text-muted);
+
+  --color-shadow: var(--color-shadow);
+
+  --font-geist-mono: var(--font-geist-mono);
+}
+
+/* Global theme values */
+:root {
+  --radius-lg: 1rem; /* large border radius */
+  --radius-sm: 0.5rem; /* small border radius */
+
+  --color-surface: oklch(0.94 0.0143 231.81); /* background color */
+  --color-on-surface: oklch(0.89 0.0351 210.45); /* surface text color */
+
+  --color-primary: oklch(0.55 0.0955 231.81); /* main brand color */
+  --color-secondary: oklch(0.66 0.0955 227.65); /* secondary brand color */
+  --color-error: oklch(0.65 0.1921 28.84);
+
+  --text-strong: oklch(0.19 0.0955 227.65); /* strong text color */
+  --text-basec: oklch(0.26 0.0955 227.65); /* base text color */
+  --text-muted: oklch(0.64 0.0593 227.65); /* muted text color */
+
+  --color-shadow: oklch(0.38 0.0966 227.65 / 53.69%); /* shadow color */
+}
+
+/* Apply mono font */
+body {
+  @apply font-geist-mono inset-0 bg-surface bg-[radial-gradient(var(--color-secondary),transparent_1px)] [background-size:16px_16px];
+}
+
+@layer utilities {
+  .shadow {
+    box-shadow: 0px 0px 400px -66px var(--color-shadow);
+    -webkit-box-shadow: 0px 0px 400px -66px var(--color-shadow);
+    -moz-box-shadow: 0px 0px 400px -66px var(--color-shadow);
+  }
+}

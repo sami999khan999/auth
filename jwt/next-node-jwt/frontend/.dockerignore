@@ -1,0 +1,26 @@
+# Node modules and build artifacts
+node_modules
+.next
+build
+dist
+
+# Logs and temporary files
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Local development settings and IDE directories
+.env.local
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Git directories and files
+.git
+.gitignore
+
+# Miscellaneous files
+*.swp

@@ -1,0 +1,42 @@
+services:
+  web:
+    container_name: authjs-fullstack
+
+    build: .
+
+    ports:
+      - 3000:3000
+
+    env_file: "./.env.local"
+
+    environment:
+      DATABASE_HOST: db
+
+    depends_on:
+      - db
+    develop:
+      watch:
+        - path: ./package.json
+          action: rebuild
+        - path: ./package-lock.json
+          action: rebuild
+        - path: ./
+          target: /app
+          action: sync
+
+  db:
+    container_name: authjs-database
+
+    image: postgres:latest
+
+    env_file: "./.env.local"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    ports:
+      - 5432:5432
+
+volumes:
+  postgres_data:
+    name: nextjs-authjs-postgres-volume

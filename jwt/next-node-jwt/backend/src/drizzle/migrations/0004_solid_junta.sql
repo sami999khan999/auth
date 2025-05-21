@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "unique_user_ip_agent" ON "refresh_tokens" USING btree ("user_id","user_agent","ip_address");
